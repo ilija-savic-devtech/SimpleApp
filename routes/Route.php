@@ -16,13 +16,7 @@
         }
 
         public function submit(){
-
             $uriParam = $_SERVER['REQUEST_URI'];
-            echo $uriParam;
-            foreach ($this->_uri as $value){
-                echo "<br>" . $value . "<br>";
-            }
-
             $this->_logic->showDetails($uriParam, $this->_uri);
         }
 
