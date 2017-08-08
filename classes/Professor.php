@@ -26,6 +26,7 @@
         public function setName($name)
         {
             $this->_name = $name;
+            return $this;
         }
 
         /**
@@ -42,6 +43,7 @@
         public function setSurname($surname)
         {
             $this->_surname = $surname;
+            return $this;
         }
 
 

@@ -10,23 +10,29 @@
             } elseif($uriParam == $uri[1]) {
                 $student = new Student();
                 $student->role();
-                $student->setName("Petar");
-                $student->setSurname("Petrovic");
+                $student->setName("Petar")->setSurname("Petrovic");
                 echo "Student name: " . $student->getName(). "<br>";
                 echo "Student surname: " . $student->getSurname() . "<br>";
                 $student->studying();
             } elseif ($uriParam == $uri[2]){
                 $professor = new Professor();
                 $professor->role();
-                $professor->setName("Marko");
-                $professor->setSurname("Markovic");
+                $professor->setName("Marko")->setSurname("Markovic");
                 echo "Student name: " . $professor->getName(). "<br>";
                 echo "Student surname: " . $professor->getSurname() . "<br>";
                 $professor->questioning();
-            } else {
+            } elseif($uriParam == $uri[3]){
+                $trimmedUri = trim($uriParam, '/student/');
+                if (!is_numeric($trimmedUri)){
+                    echo "<h1><center>Invalid page!!!</center></h1>";
+                } else {
+                    echo "<h1><center>Student id: " . $trimmedUri . "</center></h1>";
+                }
+            }
+            else {
                 echo "<h1><center>Invalid page!!!</center></h1>";
             }
         }
     }
 
-?>
+
