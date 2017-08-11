@@ -1,7 +1,10 @@
 <?php
-    namespace classes;
-    interface StudentInterface{
-        public function studying();
 
-    }
+namespace classes;
+interface StudentInterface
+{
+    public function studying();
+
+}
+
 ?>

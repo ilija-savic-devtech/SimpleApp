@@ -1,12 +1,29 @@
 <?php
 require 'autoloader.php';
-echo "Hello World<br>";
-$route = new routes\Route(new \routes\RouteLogic());
-$route->add("/");
-$route->add("/student");
-$route->add("/professor");
-$uriParam = $_SERVER['REQUEST_URI'];
-$route->add($uriParam);
 
-$route->submit();
-?>
+$route = new \routes\Router();
+
+$route->add('/', function() {
+    $view = new \view\View();
+    $view->home();
+});
+$route->add('/student', function() {
+    $view = new \view\View();
+    $view->student();
+});
+$route->add('/professor', function() {
+    $view = new \view\View();
+    $view->professor();
+});
+$route->add('/student/.+', function($id){
+    if (is_numeric($id)) {
+        echo "<h1><center>Student id: $id</center></h1>";
+    }
+    else {
+        echo "<h1><center>Invalid page!!!</center></h1>";
+    }
+});
+
+
+$route->listen();
+
