@@ -32,13 +32,15 @@ class Router
 
         foreach ($this->_listUri as $listKey => $listUri) {
 
-            if (preg_match("#^$listUri$#", $uri)) {
+            $id = intval(preg_replace('/[^0-9]+/', '', $uri), 10);
+            $trimmedListUri = str_replace("{id}", $id, $listUri);
 
+            if (preg_match("#^$trimmedListUri$#", $uri)) {
                 $realUri = explode('/', $uri);
                 $fakeUri = explode('/', $listUri);
 
                 foreach ($fakeUri as $key => $value) {
-                    if ($value == '.+') {
+                    if ($value == '{id}') {
                         $replacementValues[] = $realUri[$key];
                     }
                 }
@@ -46,10 +48,11 @@ class Router
             }
         }
 
+
         for ($i = 0; $i < count($this->_listUri); $i++) {
             if (preg_match("/\/\d+/", $uri)) {
                 $trimmedUri = explode('/', $uri);
-                if ($this->_listUri[$i] == $trimmedUri[0] . "/.+") {
+                if ($this->_listUri[$i] == $trimmedUri[0] . '/{id}') {
                     $this->_listUri[$i] = $uri;
                 }
             }

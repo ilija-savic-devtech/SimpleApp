@@ -1,19 +1,45 @@
 <?php
 
 namespace classes;
-class Professor extends AbstractTest implements ProffesorInterface
+class Professor extends AbstractHuman implements ProfessorInterface, HumanInterface
 {
-    private $_name;
-    private $_surname;
+    private $_numberOfScientificWork;
+    private $_subject;
 
-    public function questioning()
+    /**
+     * @return mixed
+     */
+    public function getNumberOfScientificWork()
     {
-        echo "Proffessor questioning!!!";
+        return $this->_numberOfScientificWork;
     }
 
-    public function role()
+    /**
+     * @param mixed $numberOfScientificWork
+     * @return Professor
+     */
+    public function setNumberOfScientificWork($numberOfScientificWork)
     {
-        echo "<h1><center>I am PROFESSOR!!!</center></h1><br>";
+        $this->_numberOfScientificWork = $numberOfScientificWork;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSubject()
+    {
+        return $this->_subject;
+    }
+
+    /**
+     * @param mixed $subject
+     * @return Professor
+     */
+    public function setSubject($subject)
+    {
+        $this->_subject = $subject;
+        return $this;
     }
 
     /**
@@ -48,6 +74,24 @@ class Professor extends AbstractTest implements ProffesorInterface
     {
         $this->_surname = $surname;
         return $this;
+    }
+
+    public function questioning()
+    {
+        echo "Professor questioning!!!";
+    }
+
+    public function role()
+    {
+        echo "<h1><center>I am PROFESSOR!!!</center></h1><br>";
+    }
+
+    public function printNameAndSurname(){
+        echo "Name: " . $this->getName() . "<br>Surname: " . $this->getSurname() . "<br>";
+    }
+
+    public function noOfScientificWorkAndSubject(){
+        echo "Number of scientific work: " . $this->getNumberOfScientificWork() . "<br>Subject: " . $this->getSubject() . "<br>";
     }
 
 

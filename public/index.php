@@ -1,21 +1,30 @@
 <?php
-require 'autoloader.php';
+require '..\\autoloader.php';
+use classes\Professor;
+use classes\Student;
 
 $route = new \routes\Router();
 
 $route->add('/', function() {
-    $view = new \view\View();
-    $view->home();
+    echo "<h1><center>This is Home Page</center></h1>";
 });
 $route->add('/student', function() {
-    $view = new \view\View();
-    $view->student();
+    $student = new Student();
+    $student->role();
+    $student->setName("Petar")->setSurname("Petrovic")->setIndexNo("48265")->setAverage(8.88);
+    $student->printNameAndSurname();
+    $student->indexAndAverage();
+    $student->studying();
 });
 $route->add('/professor', function() {
-    $view = new \view\View();
-    $view->professor();
+    $professor = new Professor();
+    $professor->role();
+    $professor->setName("Marko")->setSurname("Markovic")->setNumberOfScientificWork(4)->setSubject("Data science");
+    $professor->printNameAndSurname();
+    $professor->noOfScientificWorkAndSubject();
+    $professor->questioning();
 });
-$route->add('/student/.+', function($id){
+$route->add('/student/{id}', function($id){
     if (is_numeric($id)) {
         echo "<h1><center>Student id: $id</center></h1>";
     }
@@ -23,7 +32,6 @@ $route->add('/student/.+', function($id){
         echo "<h1><center>Invalid page!!!</center></h1>";
     }
 });
-
 
 $route->listen();
 

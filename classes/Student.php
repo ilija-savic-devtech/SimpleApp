@@ -1,21 +1,45 @@
 <?php
 
 namespace classes;
-class Student extends AbstractTest implements StudentInterface
+class Student extends AbstractHuman implements StudentInterface, HumanInterface
 {
-    private $_name;
-    private $_surname;
 
-    public function studying()
+    private $_indexNo;
+    private $_average;
+
+    /**
+     * @return mixed
+     */
+    public function getIndexNo()
     {
-        echo "Student is studying!!!";
+        return $this->_indexNo;
     }
 
-    public function role()
+    /**
+     * @param mixed $indexNo
+     */
+    public function setIndexNo($indexNo)
     {
-        echo "<h1><center>I am STUDENT!!!</center>></h1><br>";
+        $this->_indexNo = $indexNo;
+        return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getAverage()
+    {
+        return $this->_average;
+    }
+
+    /**
+     * @param mixed $average
+     */
+    public function setAverage($average)
+    {
+        $this->_average = $average;
+        return $this;
+    }
     /**
      * @return mixed
      */
@@ -50,6 +74,23 @@ class Student extends AbstractTest implements StudentInterface
         return $this;
     }
 
+    public function studying()
+    {
+        echo "Student is studying!!!";
+    }
+
+    public function role()
+    {
+        echo "<h1><center>I am STUDENT!!!</center></h1><br>";
+    }
+
+    public function printNameAndSurname(){
+        echo "Name: " . $this->getName() . "<br>Surname: " . $this->getSurname() . "<br>";
+    }
+
+    public function indexAndAverage(){
+        echo "Index number: " . $this->getIndexNo() . "<br> Average: " . $this->getAverage() . "<br>";
+    }
 
 }
 
