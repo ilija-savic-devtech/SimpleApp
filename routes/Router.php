@@ -9,13 +9,34 @@
 namespace routes;
 
 
+/**
+ * Class Router
+ * @package routes
+ */
 class Router
 {
 
+    /**
+     * Array of all routes
+     * @var array
+     */
     private $_listUri = array();
+    /**
+     * Array of all functions
+     * @var array
+     */
     private $_listCall = array();
+    /**
+     * String for trimming uri
+     * @var string
+     */
     private $_trim = '/\^$';
 
+    /**
+     * Method for adding routes
+     * @param $uri
+     * @param $function
+     */
     public function add($uri, $function)
     {
         $uri = trim($uri, $this->_trim);
@@ -24,6 +45,11 @@ class Router
     }
 
 
+    /**
+     * Checking is the routes in the array
+     * and assigning methods for those routes
+     *
+     */
     public function listen()
     {
         $uri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';

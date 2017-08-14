@@ -1,10 +1,20 @@
 <?php
 
 namespace classes;
+/**
+ * Class Student
+ * @package classes
+ */
 class Student extends AbstractHuman implements StudentInterface, HumanInterface
 {
 
+    /**
+     * @var
+     */
     private $_indexNo;
+    /**
+     * @var
+     */
     private $_average;
 
     /**
@@ -17,6 +27,7 @@ class Student extends AbstractHuman implements StudentInterface, HumanInterface
 
     /**
      * @param mixed $indexNo
+     * @return $this
      */
     public function setIndexNo($indexNo)
     {
@@ -34,64 +45,43 @@ class Student extends AbstractHuman implements StudentInterface, HumanInterface
 
     /**
      * @param mixed $average
+     * @return $this
      */
     public function setAverage($average)
     {
         $this->_average = $average;
         return $this;
     }
-    /**
-     * @return mixed
-     */
-    public function getName()
-    {
-        return $this->_name;
-    }
 
     /**
-     * @param mixed $name
+     * Printing out student action
      */
-    public function setName($name)
-    {
-        $this->_name = $name;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname()
-    {
-        return $this->_surname;
-    }
-
-    /**
-     * @param mixed $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->_surname = $surname;
-        return $this;
-    }
-
     public function studying()
     {
         echo "Student is studying!!!";
     }
 
+    /**
+     * Printing out role of Student class
+     */
     public function role()
     {
         echo "<h1><center>I am STUDENT!!!</center></h1><br>";
     }
 
+    /**
+     * Printing out name and surname parameters of Student class
+     */
     public function printNameAndSurname(){
         echo "Name: " . $this->getName() . "<br>Surname: " . $this->getSurname() . "<br>";
     }
 
+    /**
+     * Printing out index number and average of Student class
+     */
     public function indexAndAverage(){
         echo "Index number: " . $this->getIndexNo() . "<br> Average: " . $this->getAverage() . "<br>";
     }
 
 }
 
-?>

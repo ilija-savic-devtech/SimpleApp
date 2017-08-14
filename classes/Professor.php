@@ -1,9 +1,19 @@
 <?php
 
 namespace classes;
+/**
+ * Class Professor
+ * @package classes
+ */
 class Professor extends AbstractHuman implements ProfessorInterface, HumanInterface
 {
+    /**
+     * @var
+     */
     private $_numberOfScientificWork;
+    /**
+     * @var
+     */
     private $_subject;
 
     /**
@@ -43,53 +53,31 @@ class Professor extends AbstractHuman implements ProfessorInterface, HumanInterf
     }
 
     /**
-     * @return mixed
+     * Printing out Professor action
      */
-    public function getName()
-    {
-        return $this->_name;
-    }
-
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->_name = $name;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getSurname()
-    {
-        return $this->_surname;
-    }
-
-    /**
-     * @param mixed $surname
-     */
-    public function setSurname($surname)
-    {
-        $this->_surname = $surname;
-        return $this;
-    }
-
     public function questioning()
     {
         echo "Professor questioning!!!";
     }
 
+    /**
+     * Printing out role of Professor class
+     */
     public function role()
     {
         echo "<h1><center>I am PROFESSOR!!!</center></h1><br>";
     }
 
+    /**
+     * Printing out name and surname parameters of Professor class
+     */
     public function printNameAndSurname(){
         echo "Name: " . $this->getName() . "<br>Surname: " . $this->getSurname() . "<br>";
     }
 
+    /**
+     * Printing out number of scientific work and subject of Professor class
+     */
     public function noOfScientificWorkAndSubject(){
         echo "Number of scientific work: " . $this->getNumberOfScientificWork() . "<br>Subject: " . $this->getSubject() . "<br>";
     }
@@ -97,4 +85,3 @@ class Professor extends AbstractHuman implements ProfessorInterface, HumanInterf
 
 }
 
-?>
