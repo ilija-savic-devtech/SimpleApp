@@ -9,16 +9,17 @@ abstract class AbstractHuman
 {
     /**
      * Name variable for children classes
-     * @var name
+     * @var $name
      */
     protected $name;
     /**
      * Surname variable for children classes
-     * @var surname
+     * @var $surname
      */
     protected $surname;
 
     /**
+     * Getter for name
      * @return mixed
      */
     public function getName()
@@ -27,6 +28,7 @@ abstract class AbstractHuman
     }
 
     /**
+     * Setter for name
      * @param mixed $name
      * @return AbstractHuman
      */
@@ -37,6 +39,7 @@ abstract class AbstractHuman
     }
 
     /**
+     * Getter for surname
      * @return mixed
      */
     public function getSurname()
@@ -45,6 +48,7 @@ abstract class AbstractHuman
     }
 
     /**
+     * Setter for surname
      * @param mixed $surname
      * @return AbstractHuman
      */

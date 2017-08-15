@@ -9,15 +9,18 @@ class Student extends AbstractHuman implements StudentInterface, HumanInterface
 {
 
     /**
-     * @var
+     * Index number for Student class
+     * @var $_indexNo
      */
     private $_indexNo;
     /**
-     * @var
+     * Average for Student class
+     * @var $_average
      */
     private $_average;
 
     /**
+     * Getter for index number
      * @return mixed
      */
     public function getIndexNo()
@@ -26,6 +29,7 @@ class Student extends AbstractHuman implements StudentInterface, HumanInterface
     }
 
     /**
+     * Setter for index number
      * @param mixed $indexNo
      * @return $this
      */
@@ -36,6 +40,7 @@ class Student extends AbstractHuman implements StudentInterface, HumanInterface
     }
 
     /**
+     * Getter for average
      * @return mixed
      */
     public function getAverage()
@@ -44,6 +49,7 @@ class Student extends AbstractHuman implements StudentInterface, HumanInterface
     }
 
     /**
+     * Setter for average
      * @param mixed $average
      * @return $this
      */

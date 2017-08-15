@@ -8,15 +8,18 @@ namespace classes;
 class Professor extends AbstractHuman implements ProfessorInterface, HumanInterface
 {
     /**
-     * @var
+     * Number of scientific work for Professor class
+     * @var $_numberOfScientificWork
      */
     private $_numberOfScientificWork;
     /**
-     * @var
+     * Subject for Professor class
+     * @var $_subject
      */
     private $_subject;
 
     /**
+     * Getter for number of scientific work
      * @return mixed
      */
     public function getNumberOfScientificWork()
@@ -25,6 +28,7 @@ class Professor extends AbstractHuman implements ProfessorInterface, HumanInterf
     }
 
     /**
+     * Setter for scientific work
      * @param mixed $numberOfScientificWork
      * @return Professor
      */
@@ -35,6 +39,7 @@ class Professor extends AbstractHuman implements ProfessorInterface, HumanInterf
     }
 
     /**
+     * Getter for subject
      * @return mixed
      */
     public function getSubject()
@@ -43,6 +48,7 @@ class Professor extends AbstractHuman implements ProfessorInterface, HumanInterf
     }
 
     /**
+     * Setter for subject
      * @param mixed $subject
      * @return Professor
      */
