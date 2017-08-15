@@ -1,10 +1,7 @@
 <?php
 
 namespace classes;
-/**
- * Class Student
- * @package classes
- */
+
 class Student extends AbstractHuman implements StudentInterface, HumanInterface
 {
 

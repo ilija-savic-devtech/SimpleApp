@@ -1,10 +1,7 @@
 <?php
 
 namespace classes;
-/**
- * Class Professor
- * @package classes
- */
+
 class Professor extends AbstractHuman implements ProfessorInterface, HumanInterface
 {
     /**

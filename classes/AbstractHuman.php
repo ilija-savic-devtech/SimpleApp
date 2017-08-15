@@ -1,10 +1,7 @@
 <?php
 
 namespace classes;
-/**
- * Class AbstractHuman
- * @package classes
- */
+
 abstract class AbstractHuman
 {
     /**

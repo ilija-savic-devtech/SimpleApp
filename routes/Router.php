@@ -8,14 +8,8 @@
 
 namespace routes;
 
-
-/**
- * Class Router
- * @package routes
- */
 class Router
 {
-
     /**
      * Array of all routes
      * @var array

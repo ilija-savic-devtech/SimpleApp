@@ -1,9 +1,6 @@
 <?php
 namespace classes;
-/**
- * Interface HumanInterface
- * @package classes
- */
+
 interface HumanInterface{
     /**
      * Displaying a role

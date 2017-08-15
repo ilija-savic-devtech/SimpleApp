@@ -1,10 +1,7 @@
 <?php
 
 namespace classes;
-/**
- * Interface StudentInterface
- * @package classes
- */
+
 interface StudentInterface
 {
     /**

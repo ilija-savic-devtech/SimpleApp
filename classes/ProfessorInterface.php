@@ -2,10 +2,6 @@
 
 namespace classes;
 
-/**
- * Interface ProfessorInterface
- * @package classes
- */
 interface ProfessorInterface
 {
 
