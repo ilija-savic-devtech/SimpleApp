@@ -5,15 +5,7 @@ namespace classes;
 class Student extends AbstractHuman implements StudentInterface, HumanInterface
 {
 
-    /**
-     * Index number for Student class
-     * @var $_indexNo
-     */
     private $_indexNo;
-    /**
-     * Average for Student class
-     * @var $_average
-     */
     private $_average;
 
     /**

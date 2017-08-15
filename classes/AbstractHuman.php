@@ -4,15 +4,8 @@ namespace classes;
 
 abstract class AbstractHuman
 {
-    /**
-     * Name variable for children classes
-     * @var $name
-     */
+
     protected $name;
-    /**
-     * Surname variable for children classes
-     * @var $surname
-     */
     protected $surname;
 
     /**
@@ -27,7 +20,7 @@ abstract class AbstractHuman
     /**
      * Setter for name
      * @param mixed $name
-     * @return AbstractHuman
+     * @return $this
      */
     public function setName($name)
     {
@@ -47,14 +40,13 @@ abstract class AbstractHuman
     /**
      * Setter for surname
      * @param mixed $surname
-     * @return AbstractHuman
+     * @return $this
      */
     public function setSurname($surname)
     {
         $this->surname = $surname;
         return $this;
     }
-
 
 
 }

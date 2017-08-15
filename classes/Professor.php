@@ -4,15 +4,8 @@ namespace classes;
 
 class Professor extends AbstractHuman implements ProfessorInterface, HumanInterface
 {
-    /**
-     * Number of scientific work for Professor class
-     * @var $_numberOfScientificWork
-     */
+
     private $_numberOfScientificWork;
-    /**
-     * Subject for Professor class
-     * @var $_subject
-     */
     private $_subject;
 
     /**

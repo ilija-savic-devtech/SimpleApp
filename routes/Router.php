@@ -1,29 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ilija.savic
- * Date: 8/10/2017
- * Time: 2:40 PM
- */
-
 namespace routes;
-
 class Router
 {
-    /**
-     * Array of all routes
-     * @var array
-     */
     private $_listUri = array();
-    /**
-     * Array of all functions
-     * @var array
-     */
     private $_listCall = array();
-    /**
-     * String for trimming uri
-     * @var string
-     */
     private $_trim = '/\^$';
 
     /**
